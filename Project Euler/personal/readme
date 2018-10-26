@@ -1,0 +1,2 @@
+Generalizes the fibonacci sequence to n base cases, with int base case 
+n = n - 1.
