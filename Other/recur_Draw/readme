@@ -1,0 +1,4 @@
+Modify the values in the functions to change the image generated.
+
+Change plt.savefig("Name.png") to plt.savefig("Name.pdf") to increase
+file size and quality
