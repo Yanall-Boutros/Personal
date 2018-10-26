@@ -7,10 +7,16 @@ import numpy as np
 # -----------------------------------------------------------------------
 np.random.seed(19680801)
 # Future update, use inverse squared probabilities for less fucky results
-prob_percent = 0.86640897
+prob_percent = 0.87
 even_beat_prob = 0.75
 no_beat_prob = 0.3
 n_runs = 100
+def n_beats(n):
+   # returns an array of length n initialized to zeros
+   measure = []
+   for i in range(n):
+      measure.append(0)
+   return measure
 def drop_the_beat():
    # Returns either a list with 0 initialized values or a 1, or a 0
    if np.random.rand() <  prob_percent:
@@ -38,12 +44,15 @@ def drop_the_beat():
       return subbeat
 # let the length of an array denote the maximum number of beats to fit in
 # a measure. with 0 indicating a break
+# -----------------------------------------------------------------------
+# Main Function
+# -----------------------------------------------------------------------
 # inside every beat, is either a 1, indicating a quarter note, or another
 # list, indicating the length of that list is the number of subdivisions
 # of the beat
-master_runs = []   
-for i in range(n_runs):
-   a = [0,0,0,0]
-   for i in range(len(a)):
-      a[i] = drop_the_beat()
-   print(a)
+for j in [2, 4, 6, 8, 10]: 
+   for i in range(n_runs):
+      a = n_beats(j)
+      for i in range(len(a)):
+         a[i] = drop_the_beat()
+      print(a)
