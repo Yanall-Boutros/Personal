@@ -1,0 +1,7 @@
+The objective is to generate every permutation / sequence of runs that
+exist for me to learn on the violin for a set of time signatures (4/4,
+3/4, cut time, etc...) fitting inside each beat. Therefore, the sum of 
+time for run of notes must equal the length of the beat. For example, 
+in 4/4 time the lowest denominator of the beat is a quarter note, which
+can be represented as a quarter note, two eighth notes, three tripplets,
+four sixteenths, etc...
