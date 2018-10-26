@@ -4,17 +4,17 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 # Linear transformation functions
 # f1 is chosen 1 percent of the time
-def f1(x_n, y_n):
-   return (0, 0.16*y_n)
+def f1(x, y):
+   return (0, 0.16*y)
 # f2 is chosen 85% of the time
 def f2(x_n, y_n):
-   return ((0.05*x_n + 0.01+y_n), (-0.05*x_n + 0.85*y_n + 1.6))
+   return ((0.85*x_n + 0.04+y_n), (-0.04*x_n + 0.85*y_n + 1.6))
 # f3 is chosen 7% of the time
 def f3(x, y):
-   return ((0.1*x - 0.26*y), (0.23*x+0.22*y+1.6))
+   return ((0.2*x - 0.26*y), (0.23*x+0.22*y+1.6))
 # f4 is chosen 7% of the time
 def f4(x, y):
-   return ((-0.2*x + 0.28*y), (0.26*x + 0.24*y + 0.44))
+   return ((-0.15*x + 0.28*y), (0.26*x + 0.24*y + 0.44))
 
 coors = list()
 # Base Case, x_0 = 0, y_0 = 0
