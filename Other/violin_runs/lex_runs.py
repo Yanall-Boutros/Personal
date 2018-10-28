@@ -42,7 +42,7 @@ def print_rhythms(N):
    return output
 # The 0th Array is the lexicographic set of binary based numbers of
 # n digits in lexicographic order
-n = 4
+n = int(input("Enter the number of beats per measure: "))
 BC = rtn_binary_list(n)
 Lex_Iter = rtn_binary_list(n)
 N = []
@@ -74,9 +74,8 @@ for b_it in Lex_Iter[1:]:
 # There are 2**n elements in each array, and 2**n arrays storing all
 # the possible combinations
 
-# Finally, repeat this process for each array until reaching an
-# an arbitrary depth (replace BC in each sub array with this function
-
+# Finally, have the BC array serve as an array back to N, satisfying
+# the recursive memory management aspect
 add_depth = N
 # replace every BC in N with N
 for lex_it in range(1, len(N[1:])+1):
@@ -84,3 +83,17 @@ for lex_it in range(1, len(N[1:])+1):
       for beat_it in range(len(N[lex_it][measure_it])):
          if type(N[lex_it][measure_it][beat_it]) == type(list()):
             N[lex_it][measure_it][beat_it] = add_depth
+
+# N is an infinite array, N[i] contains the lexicographic permutation
+# from base case, and is of cardinality 2^n. N[i][j] contains the measure
+# and is constant of cardinality 4. N[i][j][k] is either a 0 (no beat),
+# a 1 (yes beat) or is or some subdivision based on one of the 
+# permutations of N.
+
+# In general, b_it_to_elem_swap(base_2(i+1))) gives the indices of
+# k for which subdivision occurs.
+
+# N[i][j][k] == N[i][j][k][i'][j'][k'] == 
+# N[i][j][k][i'][j'][k'][i''][j''][k'']
+# let max(num(primes)) following any index be m. The measure j therefore
+# has at worst one beat which subdivides n^m times
