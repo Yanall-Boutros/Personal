@@ -1,0 +1,139 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx,epsf,ulem}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{textgreek}
+\usepackage{float}
+\restylefloat{table}
+\begin{document}
+\title{Analysis of Atomic Spectra and Angles of Diffraction}
+\author{Yanall Boutros Lab Partner: Jesus Ramirez}
+\date{\today}
+\maketitle
+\begin{abstract}
+abstract goes here
+\end{abstract}
+
+\section*{I. Introduction}
+\indent\indent This section contains a brief overview of the purpose of this report and lab. Section II describes the underlying theory for compiling, analyzing, and interpreting data, as well as relevant equations. Section III contains a description of the apparatus used, as well as how they were calibrated and the roles they served. Section IV contains the results of our data, and Section V contains our analysis of the results, possible sources of error, and any final conclusions. \newline The purpose of this experiment was two fold: first to determine the Rydberg constant by using calculated values for the wavelength of Hydrogen. The wavelengths were determined by calculating the number of slits in our diffraction grating given the wavelengths of Helium, and measuring the angles of diffraction. The second purpose behind our experiment was to compare the spectral lines of Helium and Neon to the laser radiation lines and observe if either the Helium or Neon lines coincide with the Helium-Neon laser.  
+
+\section*{II. Theory}
+\indent\indent In order to eventually calculate the wavelengths of Hydrogen we first need to know how many slits are in our diffraction grating. After calibrating our telescope to be properly aligned with our spectrometer we recorded what angles relative to a measured central angle corresponded to which observed colors emitted by Helium. Using the diffraction grating equation, we can derive an equation relating the spacing per slit \textit{d} to the order of the spectrum \textit{m}, the angle of diffraction \textit{$\theta$}, and the wavelength of the observed light \textit{$\lambda$}. 
+\begin{equation}m\lambda/d = \sin\theta_1 + \sin\phi\end{equation}
+\begin{equation}m\lambda/d = \sin\theta_2 + \sin\phi\end{equation}
+
+
+Here $\theta_1$ and $\theta_2$ represent the angles of diffraction, however the angles we measure our angles to be relative to some arbitrary central angle $\phi$. With small angles of $\phi$ however, our equation reduces to a more familiar form[1]:
+\begin{equation}m\lambda/d = \sin\theta\end{equation}
+
+
+With some simple algebra, we derive the equation to be used in a python script for calculating the number of slits in our diffraction grating.
+\begin{equation}d = \frac{m\lambda}{\sin\theta}\end{equation}
+
+
+Where $\theta$ is the angle measured relative to the arbitrary central angle.
+Now with a \textit{d} value we can again repeat our experiment but with observing Hydrogen instead of Helium and solve for some unknown $\lambda$ values given \textit{d}, \textit{$\theta$}, and \textit{m}.
+\begin{equation} \lambda = \frac{d\sin\theta}{m}\end{equation}
+
+
+For all wavelengths \textit{$\lambda$} in our set of calculated wavelengths observed, there does not exist a \textit{$\lambda$} such that it does not belong to the Balmer series. By virtue of being a member of this set, we can relate such a \textit{$\lambda$} to the Rydberg Constant by the following equation: 
+\begin{equation}\frac{1}{\lambda} = R_H(\frac{1}{\eta_2}^2 - \frac{1}{\eta_n}^2) \end{equation}
+
+
+Where $\eta_n$ corresponds to the orbital shell the electron transitions from, and $\eta_2$ denotes the final orbital shell it transitions to. Both are a unit-less, integer type number. With simple algebra we solve for $R_H$ independently to be:
+\begin{equation}R_H = \frac{\eta_2\eta_n}{\lambda(\eta_n-\eta_2)} \end{equation}
+
+
+In a python program we define Equations 4, 5, and 7 to be functions for which accept sets of data as input and return sets of data as well. We assume $\eta_n$ to be an integer on a domain of [3, 4, 5]. With three distinct colors and three possible values for $\eta_n$ we describe how we determined $R_H$ for each wavelength out of a set of 9 possible values in our Results and Discussion section.
+
+In our second experiment we aim a Helium-Neon laser through our spectroscope while simultaneously placing a mask over the lamp to reduce the intensity of light and observe the resulting spectral lines. We qualitatively observe and quantitatively record if these spectral lines coincide with either the spectral lines from the Helium spectrum or the spectral lines from the Neon spectrum. We define this procedure more in Section III.
+\section*{III. Methods}
+\indent \indent Light is observed as it passes from the source, through the entrance slit of the collimator, then through the diffraction grating, then through the telescope. Before taking measurements, we calibrated our spectrometer by first lining it up with the calorimeter, then using a mirror to get our two cross-hairs to line up. We used a Mercury spectra tube to act as our light source for this process.
+
+After our cross-hairs were lined up, we replaced our mirror with a diffraction grating, as well as our Mercury spectra tube with a Helium tube. We recorded what our central angle was displayed on our vernier scale before taking any other measurements. We then rotated our telescope first in the counterclockwise direction, then in the clockwise direction, stopping to record our measurements where our cross-hairs lined up with a color emitted by Helium. For Helium, we covered the entire Order 1 spectrum that is visible to the human eye as well as all of the second Order - excluding the 'faint' red color as it had become too faint to observe. We then used these measured angles as well as known wavelengths of Helium to calculate possible values for \textit{d} by using Equation 4.
+
+After we compiled a set of values for \textit{d} we took the average of that set and used that value to calculate the wavelengths of Hydrogen via Equation 5. We measured incident angles using the same method as with Helium. With values for \textit{$\lambda$} we can now use Equation 7 to determine a Rydberg constant.
+
+Lastly, we compared the spectral lines of Helium and Neon to the laser radiation lines of a Helium-Neon laser. We accomplished this by placing a mask in front of the Helium and Neon spectral tube to reduce the intensity of incoming light through our collimator. The laser was aimed such that it would diffract and enter the collimator as well. We noted if the angles of diffraction lined up with either the Helium or the Neon spectral lines both qualitatively and quantitatively by use of our vernier scale.
+
+\section*{IV. Results}
+Results go here
+\begin{table}[H]
+\begin{tabular}{|l|l|l|l|}
+\hline
+Color     & Order 1 Angle in Degrees    & Order 2 Angle in Degrees & Initial Condition                                                   \\ \hline
+Orange    & 42.5 deg 17 am              & 50 deg 0 am              & 32.5 degrees 0 arc minutes, measuring in counter clockwise rotation \\ \hline
+Violet    & 40 degrees 26 arc minutes   & 48 degrees 3 arc minutes &                                                                     \\ \hline
+Indigo    & 40.5 degrees 19 arc minutes & 48.5 deg 26 am           &                                                                     \\ \hline
+Blue      & 41 deg 10 arc min           & 49.5 deg 5 am            &                                                                     \\ \hline
+Green     & 41.5 deg 17 am              & 49.5 deg 17 am           &                                                                     \\ \hline
+Red       & 44 deg 10 am                & 53 deg 0 am              &                                                                     \\ \hline
+Faint Red & 49.5 deg 22 am              &                          &                                                                     \\ \hline
+\end{tabular}
+\end{table}
+\begin{table}[H]
+\begin{tabular}{|l|l|l|l|}
+\hline
+Color     & Order 1 Angle in Degrees & Order 2 Angle in Degrees & Initial Condition                                           \\ \hline
+Orange    & 22.5 deg 9 am            & 12.5 deg 1 am            & 32.5 degrees 0 arc minutes, measuring in clockwise rotation \\ \hline
+Violet    & 25 deg 4 am              & 17 deg 22 am             &                                                             \\ \hline
+Indigo    & 24.5 deg 12 am           & 16.5 deg 5 am            &                                                             \\ \hline
+Blue      & 24 deg 23 am             & 16 deg 0 am              &                                                             \\ \hline
+Green     & 24 deg 3 am              & 15.5 deg 9 am            &                                                             \\ \hline
+Red       & 21 deg 24 am             & 9.5 deg 1 am             &                                                             \\ \hline
+Faint Red & 20.5 deg 25 am           &                          &                                                             \\ \hline
+\end{tabular}
+\end{table}
+\begin{table}[H]
+\begin{tabular}{llll}
+\cline{2-4}
+\multicolumn{1}{l|}{}   & \multicolumn{1}{l|}{Clockwise \# of slits} & \multicolumn{1}{l|}{Counter Clockwise \# of slits} & \multicolumn{1}{l|}{Average \# of slits by color} \\ \cline{2-4} 
+\multicolumn{1}{l|}{}   & \multicolumn{1}{l|}{298}                   & \multicolumn{1}{l|}{285}                           & \multicolumn{1}{l|}{292}                          \\ \cline{2-4} 
+\multicolumn{1}{l|}{}   & \multicolumn{1}{l|}{301}                   & \multicolumn{1}{l|}{289}                           & \multicolumn{1}{l|}{295}                          \\ \cline{2-4} 
+\multicolumn{1}{l|}{}   & \multicolumn{1}{l|}{306}                   & \multicolumn{1}{l|}{294}                           & \multicolumn{1}{l|}{300}                          \\ \cline{2-4} 
+\multicolumn{1}{l|}{}   & \multicolumn{1}{l|}{300}                   & \multicolumn{1}{l|}{306}                           & \multicolumn{1}{l|}{303}                          \\ \cline{2-4} 
+\multicolumn{1}{l|}{}   & \multicolumn{1}{l|}{300}                   & \multicolumn{1}{l|}{291}                           & \multicolumn{1}{l|}{296}                          \\ \cline{2-4} 
+\multicolumn{1}{l|}{}   & \multicolumn{1}{l|}{286}                   & \multicolumn{1}{l|}{278}                           & \multicolumn{1}{l|}{282}                          \\ \cline{2-4} 
+\multicolumn{1}{l|}{}   & \multicolumn{1}{l|}{298}                   & \multicolumn{1}{l|}{290}                           & \multicolumn{1}{l|}{294}                          \\ \cline{2-4} 
+\multicolumn{1}{l|}{}   & \multicolumn{1}{l|}{302}                   & \multicolumn{1}{l|}{296}                           & \multicolumn{1}{l|}{299}                          \\ \cline{2-4} 
+\multicolumn{1}{l|}{}   & \multicolumn{1}{l|}{295}                   & \multicolumn{1}{l|}{289}                           & \multicolumn{1}{l|}{292}                          \\ \cline{2-4} 
+\multicolumn{1}{l|}{}   & \multicolumn{1}{l|}{291}                   & \multicolumn{1}{l|}{294}                           & \multicolumn{1}{l|}{293}                          \\ \cline{2-4} 
+\multicolumn{1}{l|}{}   & \multicolumn{1}{l|}{294}                   & \multicolumn{1}{l|}{297}                           & \multicolumn{1}{l|}{296}                          \\ \cline{2-4} 
+\multicolumn{1}{l|}{}   & \multicolumn{1}{l|}{293}                   & \multicolumn{1}{l|}{296}                           & \multicolumn{1}{l|}{294}                          \\ \cline{2-4} 
+\multicolumn{1}{l|}{}   & \multicolumn{1}{l|}{278}                   & \multicolumn{1}{l|}{280}                           & \multicolumn{1}{l|}{279}                          \\ \cline{2-4} 
+Average $|$ std deviation & 296 $|$ 7.09                                 & 291 $|$ 7.06                                         & 294 | 6.30                                       
+\end{tabular}
+\end{table}
+\begin{table}[H]
+\begin{tabular}{ll}
+Initial Condition                & 33 deg, 11 am, Counter Clockwise Rotation     \\ \hline
+\multicolumn{1}{|l|}{Color}      & \multicolumn{1}{l|}{Order 1 Angle in Degrees} \\ \hline
+\multicolumn{1}{|l|}{Dark Blue}  & \multicolumn{1}{l|}{40.5 deg 3 am}            \\ \hline
+\multicolumn{1}{|l|}{Light Blue} & \multicolumn{1}{l|}{41.5 deg 4 am}            \\ \hline
+\multicolumn{1}{|l|}{Red}        & \multicolumn{1}{l|}{44.5 deg 0 am}            \\ \hline
+\end{tabular}
+\end{table}
+\begin{table}[H]
+\begin{tabular}{ll}
+Initial Condition                & 33 deg, 11 am,  Clockwise Rotation            \\ \hline
+\multicolumn{1}{|l|}{Color}      & \multicolumn{1}{l|}{Order 1 Angle in Degrees} \\ \hline
+\multicolumn{1}{|l|}{Dark Blue}  & \multicolumn{1}{l|}{26 deg 1 am}              \\ \hline
+\multicolumn{1}{|l|}{Light Blue} & \multicolumn{1}{l|}{25 deg 2 am}              \\ \hline
+\multicolumn{1}{|l|}{Red}        & \multicolumn{1}{l|}{22 deg 2 am}              \\ \hline
+\end{tabular}
+\end{table}
+\begin{table}[H]
+\begin{tabular}{|l|l|l|l|}
+\hline
+Calculated Rydberg Value & Dark Blue (430.230 nm) & Light Blue (489.049 nm) & Red (662.602 nm) \\ \hline
+n = 3                    & 16,735,247             & 14722442                & 10866250         \\ \hline
+n = 4                    & 12396479               & 10905513                & 8049074          \\ \hline
+n = 5                    & 11068285               & 9737064                 & 7186673          \\ \hline
+\end{tabular}
+\end{table}
+
+\section*{V. Discussion}
+Discussion goes here
+
+\end{document}
+

@@ -1,0 +1,15 @@
+ccw_deg = np.array([40.5, 41.5, 44.5])
+
+ccw_arc = np.array([3, 4, 0])
+
+cw_deg = np.array([26, 25, 22])
+
+cw_arc = np.array([
+                   1, 2, 2
+                 ])
+
+m = np.array([
+              1, 1, 1
+            ])
+
+d = 294

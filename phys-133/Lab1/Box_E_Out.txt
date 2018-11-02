@@ -1,0 +1,20 @@
+
+========================================================================
+Scipy.Curve_Fit Best Fit Line Chi Squared Test
+------------------------------------------------------------------------
+Chi-square =  136.32378011909233
+Degrees of Freedom =  60
+Reduced Chi Square =  2.2720630019848724
+Probability of exceeding this chi_square =  7.1944199153684e-08
+Confidence can we reject this model =  0.9999999280558008
+========================================================================
+
+========================================================================
+Scipy.Curve_Fit Best Fit Line Chi Squared Test
+------------------------------------------------------------------------
+Chi-square =  638.1285527441177
+Degrees of Freedom =  60
+Reduced Chi Square =  10.635475879068627
+Probability of exceeding this chi_square =  0.0
+Confidence can we reject this model =  1.0
+========================================================================

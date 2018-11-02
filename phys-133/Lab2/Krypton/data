@@ -1,0 +1,16 @@
+ccw_deg = np.array([40.5, 40.5, 42.5, 43])
+
+ccw_arc = np.array([3, 22, 11, 20])
+
+cw_deg = np.array([25.5, 23.5, 23.5, 23])
+
+cw_arc = np.array([17, 3, 23 ,10])
+
+deviation = 33 + 28/60
+
+m = np.array([1, 1, 1, 1])
+
+# saved as nm
+colors = np.array([
+                   467.35, 496.25, 565.64, 605.86, 467.35, 496.25, 565.64, 605.86
+                 ])

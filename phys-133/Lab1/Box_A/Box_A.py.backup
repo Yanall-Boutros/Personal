@@ -1,0 +1,21 @@
+# Yanall Boutros
+# Phys-133
+# Lab 1 - Box_A.py
+# Creates a Graph relating the Phase and Magnitude of Impedence to the
+# Frequency recorded, as well as error bars for those values
+# Some code was gathered from David Smith, My Lab Partner for Box E
+# Lena Eiger and I worked on compiling and debugging other areas of
+# code
+# July, 2018
+# Import Statements
+import numpy as np
+import matplotlib.pyplot as plt
+import math as m
+plt.style.use('classic')
+import numpy.random as ran
+get_ipython().magic(u'matplotlib inline')
+import scipy.optimize as opt
+import scipy.stats as stat
+
+# Input Data / Initalize variables
+freq = np.array(

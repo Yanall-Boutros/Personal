@@ -1,0 +1,34 @@
+
+========================================================================
+Scipy.Curve_Fit Best Fit Line Chi Squared Test
+------------------------------------------------------------------------
+Chi-square =  74.98370618604203
+Degrees of Freedom =  27
+Reduced Chi Square =  2.777174303186742
+Probability of exceeding this chi_square =  2.1230278269834812e-06
+Confidence can we reject this model =  0.999997876972173
+========================================================================
+
+========================================================================
+Function LinFit Results
+------------------------------------------------------------------------
+Slope = 3.3049768495054295e-06
+intercept = 97.98311277326196
+sigma_slope = 1.9634104785120348e-05
+sigma_intercept = 0.7870288620347484
+========================================================================
+
+========================================================================
+Chi Square Test and Analysis for Linear Regression Phase Difference
+------------------------------------------------------------------------
+Number of Data Points above Line of Best Fit =  13
+Number of Data Points below Line of Best Fit =  15
+Number of Data Points on the Line of Best Fit =  0
+------------------------------------------------------------------------
+Number of Data Points above the Spread =  9
+Number of Data Points below the Spread =  13
+Number of Data Points within the Spread =  6
+------------------------------------------------------------------------
+Chi Squared =  54.7286100043899
+Reduced Chi Square =  2.0269855557181446
+========================================================================
