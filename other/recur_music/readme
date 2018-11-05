@@ -1,0 +1,40 @@
+A beat exists as a colelction of frequencies which are active at that
+instance of time, represented as a square matrix N with basis vectors
+of being the complex components from a fourier decomposition. N
+has dimensionality OxO
+
+There exists a matrix M, with dimensionality such that the resulting
+matrix is 2x2. Take the diagonals to be the values of x and y, and make
+recurisve drawing programs from them which manipulates the values of
+x and y
+
+* Instead, let there be U number of matrices so that the end result of
+applying U matrix transofrmations results in a 2x2 matrix, then, apply
+the recursive programs
+
+* Alternativeely, instead of compressing the N matrix and projecting to
+a plane of lesser dimensionality, see if it's possible to represent 
+a coordinate system to the dimensionality of N, and make recursive
+programs draw based on that.
+
+A 3D coordinate system can be imagined as a 2D plane looked in from a 
+perspective such that it is infinitessimally thin. Then, rotate that
+plane in the direction of its cross product.
+
+Could a 4D coordinate system be abstracted to be the result of a 3D
+coordinate system from a hypothetical perspective such that it appears
+infintiessimal, then rotate about the cross product of that?
+
+No, but a 2^n dimensional system can (1, 2, 4, 8, 16, 32...) due to 
+quaternions
+
+eg: 1d system, x-> R
+    2d system, z-> R+ix
+    4d system, z-> R+ix+jy+kz
+    8d system, z-> R+ab+cd+ef+gh+ij+kl+mn where b, d, f, h, j, l, and n 
+                                                are all quaternions
+   etc...
+
+for this particular method to work, n must be a matrix of dimensionality
+2^(m) = D(N)
+or m = lg(D(N)) is an integer
