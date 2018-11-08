@@ -5,3 +5,20 @@ time for run of notes must equal the length of the beat. For example,
 in 4/4 time the lowest denominator of the beat is a quarter note, which
 can be represented as a quarter note, two eighth notes, three tripplets,
 four sixteenths, etc...
+
+Assuming you're a human with the highest power output of 2000 watts, this
+allows for 64 subdivisions in 4/4 time or 128 subdivisions in cut time 
+following from physical limits in time-energy uncertainty.
+
+The Rhythym tensor N requires at least three arguments.
+
+N[0][0][3] gives the fourth beat in the 0 lex, 0 measure.
+N[0][0] gives the 0th measure of the 0 lex perm, which is [0, 0, 0, 0]
+if N[i][j][k] is equal to N itself, that indicates the kth beat is some
+value of N[i'][j'][k'] with total length a fourth of the previous beat
+if in 4/4 time.
+
+If the calculations from line 9 are accurate, that means the highest
+physical depth of this tensor is when N has 64*3 = 192 basis values. With
+the last three necessarily being of [i(64') = 0][j(64')] to give the
+values of the measure of highest subdivision.
