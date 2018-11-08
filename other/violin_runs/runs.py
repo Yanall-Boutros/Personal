@@ -1,3 +1,6 @@
+# Attempts to generate rhythms based on random probability, a less
+# preferred method as it can lead to too many recursive calls but
+# makes a fun project. lex_runs.py generates every sequence however
 # -----------------------------------------------------------------------
 # Import Statements
 # -----------------------------------------------------------------------
