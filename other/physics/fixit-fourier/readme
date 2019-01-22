@@ -1,0 +1,11 @@
+The pdf files are homework solutions involving fourier series (over discrete sets) and fourier transforms
+(the limit as the boundaries of summation/integration go to infinity)
+
+the png files are output from FixIt-Fourier-FixIt.py
+
+the data csv file is contains raw data from the number of fixit tickets issued by day and week
+the dc.csv file are the coefficients for the fourier series from the daily data
+the wc.csv file contains coefficients for the fourier series from the weekly data
+
+FixIt-Fourier-Fixit.py expresses the data as a fourier series (discrete data set) and *nterms.png
+shows the first 10 terms in the fourier series, not superimposed.
