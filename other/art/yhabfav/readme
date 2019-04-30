@@ -1,3 +1,0 @@
-takes an input a facial image and finds where the eyes and other key
-features are located, then runs symmetry analysis to produce a score with
-error reporting on how symmetric they are (and therefore beautiful)
