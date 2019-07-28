@@ -1,0 +1,2 @@
+Given a root note I (say I is Cmaj) generate graph of every reachable node
+via tritone resolution.
